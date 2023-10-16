@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "755863548796",
+    "project_id": "commutenyo",
+    "storage_bucket": "commutenyo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755863548796:android:f65b6fd4c4351183736af9",
+        "android_client_info": {
+          "package_name": "com.commutenyo.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtyh4x5EWG2zMWeoLw2MFWlPQ_4JCI1Zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Commutenyo</string>
+    <string name="my_map_api_key">AIzaSyD9-Rtd6d4Fs_V0yoe8jHqZSvmvKeTUcV0</string>
+    <string name="title_activity_landing_bottom">LandingBottom</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+<string name="signup">New to Commutenyo?</string>
+</resources>
