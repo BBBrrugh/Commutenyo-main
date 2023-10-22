@@ -1,52 +1,53 @@
 package com.commutenyo.app
 
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.commutenyo.app.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
 
 
-internal class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity(){
 
-
-    private lateinit var mMap: GoogleMap
+    lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
-        setContentView(R.layout.activity_main)
 
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        setSupportActionBar(binding.appBarMain.toolbar)
+
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        // Set the map coordinates to Kyoto Japan.
-        // Set the map coordinates to Kyoto Japan.
-        val kyoto = LatLng(14.928972, 120.893889)
-        // Set the map type to Hybrid.
-        // Set the map type to Hybrid.
-        googleMap.mapType = GoogleMap.MAP_TYPE_HYBRID
-        // Add a marker on the map coordinates.
-        // Add a marker on the map coordinates.
-        googleMap.addMarker(
-            MarkerOptions()
-                .position(kyoto)
-                .title("My Location")
-        )
-        // Move the camera to the map coordinates and zoom in closer.
-        // Move the camera to the map coordinates and zoom in closer.
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(kyoto))
-        googleMap.moveCamera(CameraUpdateFactory.zoomTo(15f))
-        // Display traffic.
-        // Display traffic.
-        googleMap.isTrafficEnabled = true
+        override fun onCreateOptionsMenu(menu: Menu): Boolean {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            menuInflater.inflate(R.menu.sidebar_menu, menu)
+            return true
+        }
+
+         override fun onSupportNavigateUp(): Boolean {
+            val navController = findNavController(R.id.nav_host_fragment_content_main)
+            return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        }
+
     }
-}

@@ -12,8 +12,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.Light"
+        android:theme="@style/Apptheme"
         tools:targetApi="31">
+        <activity
+            android:name=".signup_page"
+            android:exported="false" />
         <activity
             android:name=".loginpage"
             android:exported="false" />
@@ -21,9 +24,8 @@
             android:name=".MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_landing_bottom" />
-
         <activity
-            android:name=".signup_page"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
