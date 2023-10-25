@@ -46,6 +46,7 @@ android {
 dependencies {
 
     implementation("com.android.volley:volley:1.2.1")
+    implementation("com.google.firebase:protolite-well-known-types:18.0.0")
     val composeBom = platform("androidx.compose:compose-bom:2023.10.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)

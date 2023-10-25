@@ -49,8 +49,8 @@ class loginpage : AppCompatActivity() {
                     .addOnCompleteListener(this) {
                         if (it.isSuccessful){
 
-                              //  val intent = Intent(this, LandingBottom::class.java)
-                               // startActivity(intent)
+                              val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
 
 
                             } else {

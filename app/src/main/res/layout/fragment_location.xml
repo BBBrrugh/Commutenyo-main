@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_location.location">
+    tools:context=".Bottom_Navigation.fragment_location.location">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="Fragment Location"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:gravity="center"/>
+
 
 </FrameLayout>
