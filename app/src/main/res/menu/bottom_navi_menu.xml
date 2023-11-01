@@ -5,25 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
+    <item android:id="@+id/bott_home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+
     <item android:id="@+id/bott_fareguide"
         android:title="Fare"
         android:iconTint="@color/white"
         android:icon="@drawable/money_icon"/>
 
-    <item android:id="@+id/bott_location"
-    android:title="Location"
-        android:iconTint="@color/white"
-    android:icon="@drawable/baseline_location_on_24"/>
-
-    <item android:id="@+id/bott_home"
-        android:title="Home"
-        android:icon="@drawable/baseline_home_24"/>
-
-
-    <item android:id="@+id/bott_schedule"
-        android:iconTint="@color/white"
-        android:title="Schedule"
-        android:icon="@drawable/jeep_icon"/>
 
     <item android:id="@+id/bott_history"
         android:title="History"

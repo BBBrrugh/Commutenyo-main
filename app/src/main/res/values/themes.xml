@@ -1,13 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Commutenyo" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Base.Theme.Commutenyo" parent="Theme.Material3.Light.NoActionBar">
 
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/Lgreen</item>
         <item name="colorOnPrimary">@color/Lgreen</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorPrimaryDark">@color/Lgreen</item>
 
     </style>
 
-    <style name="Apptheme.actionbar" parent="Base.Theme.Commutenyo"/>
+
+
+
 
 </resources>

@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".Bottom_Navigation.fragment_home.home">
 
-    <include layout="@layout/activity_maps"
-        android:layout_height="520dp"
+    <include
+        layout="@layout/activity_maps"
         android:layout_width="match_parent"
-        android:layout_gravity="center"/>
+        android:layout_height="485dp"
+        android:layout_gravity="center" />
 
 
 </FrameLayout>
