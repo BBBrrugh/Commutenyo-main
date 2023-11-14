@@ -9,10 +9,10 @@ import androidx.fragment.app.FragmentManager
 import com.commutenyo.app.Bottom_Navigation.fragment_fare.fare
 import com.commutenyo.app.Bottom_Navigation.fragment_history.history
 import com.commutenyo.app.Bottom_Navigation.fragment_home.home
-
 import com.commutenyo.app.databinding.ActivityMainBinding
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.material.navigation.NavigationView
-
 
 
 /*
@@ -59,8 +59,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import java.io.IOException */
 
 
-class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener,OnMapReadyCallback {
 
+    private lateinit var mMap: OnMapReadyCallback
     private lateinit var fragmentManager: FragmentManager
     private lateinit var binding: ActivityMainBinding
 
@@ -141,184 +142,10 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     }
 
-    //google maps routes request
-
-  /*  override fun private static final String TAG = "LocationService";
-
-    private FusedLocationProviderClient mFusedLocationClient;
-    private final static long UPDATE_INTERVAL = 4 * 1000;  /* 4 secs */
-    private final static long FASTEST_INTERVAL = 2000; /* 2 sec */
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
+    override fun onMapReady(p0: GoogleMap) {
+        TODO("Not yet implemented")
     }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-        if (Build.VERSION.SDK_INT >= 26) {
-            String CHANNEL_ID = "my_channel_01";
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
-                "My Channel",
-                NotificationManager.IMPORTANCE_DEFAULT);
-
-            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
-
-            Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("")
-                .setContentText("").build();
-
-            startForeground(1, notification);
-        }
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand: called.");
-        getLocation();
-        return START_NOT_STICKY;
-    }
-
-    private void getLocation() {
-
-        // ---------------------------------- LocationRequest ------------------------------------
-        // Create the location request to start receiving updates
-        LocationRequest mLocationRequestHighAccuracy = new LocationRequest();
-        mLocationRequestHighAccuracy.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        mLocationRequestHighAccuracy.setInterval(UPDATE_INTERVAL);
-        mLocationRequestHighAccuracy.setFastestInterval(FASTEST_INTERVAL);
-
-
-        // new Google API SDK v11 uses getFusedLocationProviderClient(this)
-        if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Log.d(TAG, "getLocation: stopping the location service.");
-            stopSelf();
-            return;
-        }
-        Log.d(TAG, "getLocation: getting location information.");
-        mFusedLocationClient.requestLocationUpdates(mLocationRequestHighAccuracy, new LocationCallback() {
-            @Override
-            public void onLocationResult(LocationResult locationResult) {
-
-                Log.d(TAG, "onLocationResult: got location result.");
-
-                Location location = locationResult.getLastLocation();
-
-                if (location != null) {
-                    User user = ((UserClient)(getApplicationContext())).getUser();
-                    GeoPoint geoPoint = new GeoPoint(location.getLatitude(), location.getLongitude());
-                    UserLocation userLocation = new UserLocation(user, geoPoint, null);
-                    saveUserLocation(userLocation);
-                }
-            }
-        },
-            Looper.myLooper()); // Looper.myLooper tells this to repeat forever until thread is destroyed
-    }
-
-    private void saveUserLocation(final UserLocation userLocation){
-
-        try{
-            DocumentReference locationRef = FirebaseFirestore.getInstance()
-                .collection(getString(R.string.collection_user_locations))
-                .document(FirebaseAuth.getInstance().getUid());
-
-            locationRef.set(userLocation).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
-                        Log.d(TAG, "onComplete: \ninserted user location into database." +
-                                "\n latitude: " + userLocation.getGeo_point().getLatitude() +
-                                "\n longitude: " + userLocation.getGeo_point().getLongitude());
-                    }
-                }
-            });
-        }catch (NullPointerException e){
-            Log.e(TAG, "saveUserLocation: User instance is null, stopping location service.");
-            Log.e(TAG, "saveUserLocation: NullPointerException: "  + e.getMessage() );
-            stopSelf();
-        }
-
-    }
-}
-//
-*/
-
-
-    /* UserLocation(User user, GeoPoint geo_point, Date timestamp) {
-        this.user = user;
-        this.geo_point = geo_point;
-        this.timestamp = timestamp;
-    }
-
-    public UserLocation() {
-
-    }
-
-    protected UserLocation(Parcel in) {
-        user = in.readParcelable(User.class.getClassLoader());
-    }
-
-    public static final Creator<UserLocation> CREATOR = new Creator<UserLocation>() {
-        @Override
-        public UserLocation createFromParcel(Parcel in) {
-            return new UserLocation(in);
-        }
-
-        @Override
-        public UserLocation[] newArray(int size) {
-            return new UserLocation[size];
-        }
-    };
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public GeoPoint getGeo_point() {
-        return geo_point;
-    }
-
-    public void setGeo_point(GeoPoint geo_point) {
-        this.geo_point = geo_point;
-    }
-
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    @Override
-    public String toString() {
-        return "UserLocation{" +
-                "user=" + user +
-                ", geo_point=" + geo_point +
-                ", timestamp=" + timestamp +
-                '}';
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(user, flags);
-    }
-} */
 
 }
 

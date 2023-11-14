@@ -107,6 +107,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contact No."
@@ -125,6 +126,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
@@ -143,6 +145,7 @@
         app:layout_constraintVertical_bias="0.16">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
@@ -150,6 +153,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+
         android:id="@+id/button"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -162,5 +166,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confPass"
         app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/alreadyuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:onClick="signup_page"
+        android:text="Already have an account?"
+        android:textColor="#0070E0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

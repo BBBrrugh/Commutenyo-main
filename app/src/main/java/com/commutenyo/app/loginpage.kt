@@ -29,17 +29,14 @@ class loginpage : AppCompatActivity() {
 
 
         val button_signup = findViewById<TextView>(R.id.signuphere)
-
         button_signup.setOnClickListener {
             val intent = Intent(this, signup_page::class.java)
             startActivity(intent)
 
         }
 
+
         binding.buttonlogin.setOnClickListener {
-
-
-
 
             val email = binding.loginuser.editableText.toString()
             val pass = binding.loginpass.editableText.toString()

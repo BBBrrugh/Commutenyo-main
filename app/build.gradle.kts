@@ -47,6 +47,9 @@ dependencies {
 
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.google.firebase:protolite-well-known-types:18.0.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
     val composeBom = platform("androidx.compose:compose-bom:2023.10.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -80,6 +83,7 @@ dependencies {
 // Optional - Integration with ViewModels
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     implementation ("com.google.maps.android:android-maps-utils:0.5")
+
 
 }
 
