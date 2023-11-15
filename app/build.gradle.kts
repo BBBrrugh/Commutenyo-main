@@ -43,6 +43,8 @@ android {
     }
 }
 
+
+
 dependencies {
 
     implementation("com.android.volley:volley:1.2.1")
@@ -67,10 +69,10 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //google play service dependencies when using google api's
-    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
 
     //firebase dependencies
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
 
     //jetpack compose ui creator
@@ -82,7 +84,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 // Optional - Integration with ViewModels
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
-    implementation ("com.google.maps.android:android-maps-utils:0.5")
+    implementation ("com.google.maps.android:android-maps-utils:3.8.0")
+
+    //mapbox api
+    implementation ("com.mapbox.maps:android:10.16.2")
 
 
 }

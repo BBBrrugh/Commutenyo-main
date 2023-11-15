@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.material.navigation.NavigationView
 
 
+
 /*
 
 import com.codingwithmitch.googlemaps2018.R;
@@ -101,7 +102,9 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         )
         binding.drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
-        binding.navigationDrawer.setNavigationItemSelectedListener(this)//toggles side bar
+        binding.navigationDrawer.setNavigationItemSelectedListener(this)
+
+        //toggles side bar
 
 
 

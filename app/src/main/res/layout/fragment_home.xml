@@ -6,14 +6,40 @@
     tools:context=".Bottom_Navigation.fragment_home.home">
 
 
-    <com.google.android.gms.maps.MapView
-    android:layout_width="match_parent"
-    android:layout_height="500dp"
-        android:layout_marginBottom="10dp"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:id="@+id/mapsfragment"
-        android:layout_gravity="center"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/img_3" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/jeep"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"/>
+
+    <Button
+        android:id="@+id/buttoninitialize_home"
+
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="522dp"
+        android:layout_marginTop="145dp"
+        android:text="Welcome to commutenyo!           tap here to start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:textStyle="bold"
+        android:textSize="80dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="230dp"/>
 
 
 </FrameLayout>

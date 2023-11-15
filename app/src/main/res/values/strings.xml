@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Commutenyo</string>
-    <string name="my_map_api_key">AIzaSyD9-Rtd6d4Fs_V0yoe8jHqZSvmvKeTUcV0</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiYnJpb3hlc2pyMiIsImEiOiJjbG1ydmp3d3gwNXl1MmxvOXozazRlYTY4In0.g9HBD3v9Oun9tqDXXCFX3A</string>
     <string name="title_activity_landing_bottom">LandingBottom</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
