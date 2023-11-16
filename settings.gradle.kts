@@ -1,5 +1,3 @@
-import org.gradle.internal.impldep.org.jsoup.safety.Safelist.basic
-
 pluginManagement {
     repositories {
         google()
@@ -30,7 +28,7 @@ dependencyResolutionManagement {
                 // This should always be `mapbox` (not your username).
                 username = "mapbox"
                 // Use the secret token you stored in gradle.properties as the password
-                password = "sk.eyJ1IjoiYnJpb3hlc2pyMiIsImEiOiJjbG1ydmp3d3gwNXl1MmxvOXozazRlYTY4In0.g9HBD3v9Oun9tqDXXCFX3A"
+                password = "sk.eyJ1IjoiYnJpb3hlc2pyMiIsImEiOiJjbHAxa213bzkwbWZnMmpzNjdsN3c5dmdvIn0.C5E8ATb9j3pQV--yXadarA"
             }
         }
     }

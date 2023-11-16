@@ -1,5 +1,6 @@
 package com.commutenyo.app
 
+/*
 import android.app.Activity
 import android.widget.Toast
 import com.mapbox.android.core.permissions.PermissionsListener
@@ -40,4 +41,4 @@ class LocationPermissionHelper(val activity: WeakReference<Activity>) {
   ) {
     permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults)
   }
-}
+} */

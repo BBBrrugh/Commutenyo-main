@@ -6,6 +6,9 @@ plugins {
 
 
 
+
+
+
 }
 
 android {
@@ -47,6 +50,7 @@ android {
 
 dependencies {
 
+
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.google.firebase:protolite-well-known-types:18.0.0")
     implementation("com.google.android.gms:play-services-location:21.0.1")
@@ -86,8 +90,16 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     implementation ("com.google.maps.android:android-maps-utils:3.8.0")
 
+
+
     //mapbox api
-    implementation ("com.mapbox.maps:android:10.16.2")
+    implementation ("com.mapbox.mapboxsdk:mapbox-android-sdk:9.5.0")
+   implementation ("com.mapbox.mapboxsdk:mapbox-sdk-services:6.15.0")
+   implementation ("com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.6")
+
+    implementation ("com.mapbox.mapboxsdk:mapbox-android-navigation:0.42.6")
+   implementation ("com.mapbox.mapboxsdk:mapbox-android-plugin-places-v9:0.12.0")
+
 
 
 }

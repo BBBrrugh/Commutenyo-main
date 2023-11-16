@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.commutenyo.app.LocationTrackingActivity
 import com.commutenyo.app.R
+import com.commutenyo.app.locnav
 import com.google.android.gms.maps.MapView
 
 
@@ -32,7 +32,7 @@ class home : Fragment() {
         // Set a click listener on the button
         button.setOnClickListener {
             // Your code to handle the button click event goes here
-            val intent = Intent(this@home.context, LocationTrackingActivity::class.java)
+            val intent = Intent(this@home.context, locnav::class.java)
             startActivity(intent)
         }
     }

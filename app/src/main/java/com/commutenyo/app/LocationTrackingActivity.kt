@@ -1,5 +1,6 @@
 package com.commutenyo.app
 
+/*
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -131,4 +132,4 @@ class LocationTrackingActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         locationPermissionHelper.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
-}
+} */
