@@ -25,7 +25,7 @@
 
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
-        android:layout_height="522dp"
+        android:layout_height="400dp"
         android:layout_marginTop="145dp"
         android:text="Welcome to commutenyo!           tap here to start"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"

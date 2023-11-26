@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.commutenyo.app.MainActivity_location
 import com.commutenyo.app.R
-import com.commutenyo.app.locnav
-import com.google.android.gms.maps.MapView
 
 
 class home : Fragment() {
 
-    private lateinit var mapView: MapView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +31,7 @@ class home : Fragment() {
         // Set a click listener on the button
         button.setOnClickListener {
             // Your code to handle the button click event goes here
-            val intent = Intent(this@home.context, locnav::class.java)
+            val intent = Intent(this@home.context, MainActivity_location::class.java)
             startActivity(intent)
         }
     }
