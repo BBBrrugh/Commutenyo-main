@@ -14,11 +14,13 @@ class LanguageAdapter(private var mList: List<LanguageData>) :
     inner class LanguageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val logo: ImageView = itemView.findViewById(R.id.logoIv)
         val titleTv: TextView = itemView.findViewById(R.id.titleTv)
-        val langDescTv: TextView = itemView.findViewById(R.id.langDesc)
+        val regDescTv: TextView = itemView.findViewById(R.id.regularfare)
+        val discDescTv: TextView = itemView.findViewById(R.id.discountedfare)
         val constraintLayout: ConstraintLayout = itemView.findViewById(R.id.constraintLayout)
 
         fun collapseExpandedView(){
-            langDescTv.visibility = View.GONE
+            regDescTv.visibility = View.GONE
+            discDescTv.visibility = View.GONE
         }
     }
 
@@ -37,10 +39,12 @@ class LanguageAdapter(private var mList: List<LanguageData>) :
         val languageData = mList[position]
         holder.logo.setImageResource(languageData.logo)
         holder.titleTv.text = languageData.title
-        holder.langDescTv.text = languageData.desc
+        holder.regDescTv.text = languageData.desc
+        holder.discDescTv.text = languageData.desc
 
         val isExpandable: Boolean = languageData.isExpandable
-        holder.langDescTv.visibility = if (isExpandable) View.VISIBLE else View.GONE
+        holder.regDescTv.visibility = if (isExpandable) View.VISIBLE else View.GONE
+        holder.discDescTv.visibility = if (isExpandable) View.VISIBLE else View.GONE
 
         holder.constraintLayout.setOnClickListener {
             isAnyItemExpanded(position)

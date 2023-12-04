@@ -102,7 +102,23 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         )
         binding.drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
-        binding.navigationDrawer.setNavigationItemSelectedListener(this)
+
+        binding.navigationDrawer.setNavigationItemSelectedListener{
+
+            when (it.itemId) {
+                R.id.nav_about_us -> replacefragment(aboutus())
+
+
+
+                else -> {
+
+                }
+
+            }
+            true
+        }
+
+
 
         //toggles side bar
 

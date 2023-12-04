@@ -17,4 +17,15 @@
     <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
     <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
 
+    <string name="label_start_navigation" translatable="false">Start Navigation</string>
+    <string name="play_history" translatable="false">Play history</string>
+    <string name="select_history" translatable="false">Select history</string>
+    <string name="replay_playback_speed_seekbar" translatable="false">Replay speed %d</string>
+    <string name="history_failed_to_load_item" translatable="false">History failed to load item</string>
+    <string name="history_failed_to_load_list" translatable="false">Failed to load list</string>
+    <string name="history_local_history_file" translatable="false">Local history file</string>
+    <string name="history_replay_directory" translatable="false">Replay directory</string>
+    <string name="history_recorded_history_file" translatable="false">Recorded history file</string>
+    <string name="string_facebook" translatable="false">https://www.facebook.com/commutenyo?mibextid=LQQJ4d</string>
+
 </resources>

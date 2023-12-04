@@ -14,22 +14,23 @@
       android:id="@+id/imageView"
       android:layout_width="435dp"
       android:layout_height="769dp"
+      android:scaleType="fitXY"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.0"
-      app:srcCompat="@drawable/bgtitle" />
+      app:srcCompat="@drawable/bg" />
 
   <ImageView
       android:id="@+id/imageView2"
       android:layout_width="392dp"
       android:layout_height="316dp"
-      android:layout_marginBottom="464dp"
-      app:layout_constraintBottom_toBottomOf="@+id/imageView"
+
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.473"
       app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="@drawable/jeep" />
 
   <ImageView
@@ -47,9 +48,9 @@
   <com.google.android.material.textfield.TextInputLayout
 
       android:id="@+id/text_username"
-      android:theme="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+      style="?attr/textInputFilledStyle"
       android:layout_width="308dp"
-      app:boxStrokeColor="@color/black"
+      app:boxStrokeColor="@color/white"
 
       android:layout_height="81dp"
       android:textColorHint="@color/black"
@@ -70,7 +71,7 @@
 
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/text_password"
-      android:theme="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+      style="?attr/textInputFilledStyle"
       android:textColorHint="@color/black"
       app:boxStrokeColor="@color/black"
       android:layout_width="308dp"

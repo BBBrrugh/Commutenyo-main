@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.location.Location
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -73,6 +74,7 @@ import com.mapbox.navigation.ui.voice.model.SpeechError
 import com.mapbox.navigation.ui.voice.model.SpeechValue
 import com.mapbox.navigation.ui.voice.model.SpeechVolume
 import java.util.Locale
+import kotlin.random.Random
 
 /**
  * This example demonstrates a basic turn-by-turn navigation experience by putting together some UI elements to showcase
@@ -415,6 +417,11 @@ class RouteDirectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRouteDirectionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val number = Random.nextInt(20, 31)
+        val numberTextView = findViewById<TextView>(R.id.faretext)
+        numberTextView.text = "₱ $number"
+
         mapboxMap = binding.mapView.getMapboxMap()
 
         // initialize the location puck
@@ -712,4 +719,6 @@ class RouteDirectionActivity : AppCompatActivity() {
             play()
         }
     }
+
+
 }
